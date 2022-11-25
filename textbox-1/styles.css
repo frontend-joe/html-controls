@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: #1a1a1a;
+  color: #f9f9f9;
+  font-family: "Euclid Circular A";
+}
+
+.textbox {
+  position: relative;
+}
+
+.textbox label {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  transform-origin: 0% 0%;
+  pointer-events: none;
+  top: 4px;
+  left: 4px;
+  height: 52px;
+  width: 110px;
+  border-radius: 27px;
+  background: #5071fa;
+  transition: 0.3s;
+}
+
+.textbox input {
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  background: #313136;
+  border: 0;
+  padding-left: 126px;
+  font-size: 16px;
+  font-family: inherit;
+  color: rgb(255 255 255 / 96%);
+  outline: none;
+  transition: 0.3s;
+}
+
+.textbox input::placeholder {
+  color: rgb(255 255 255 / 50%);
+}
+
+.textbox :is(input:focus, input:valid) {
+  padding-left: 20px;
+}
+
+.textbox :is(input:focus, input:valid) ~ label {
+  translate: 0 -54px;
+  scale: 0.825;
+}
